@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  python:
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+    container_name: "exp-2023fy-data-mining-python"
+    volumes:
+      - .:/deploy/exp-2023fy-data-mining
+      # .venv をマウントしないようにするために Volume として分離させる
+      - exp-2023fy-data-mining-python-venv:/deploy/exp-2023fy-data-mining/.venv
+    working_dir: /deploy/exp-2023fy-data-mining
+    # TODO: 適切な entrypoint を設定する
+    entrypoint: >
+      sleep infinity
+    tty: true
+
+volumes:
+  exp-2023fy-data-mining-python-venv:
+    driver: local
