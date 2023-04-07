@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "exp-2023fy-data-mining"
+version = "0.1.0"
+description = "A repository for the experiment, data mining ( 7 ) held in 2023FY at NIT, Ibaraki College"
+authors = ["Colk-tech <master@colk.dev>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pydantic = "^1.10.7"
+wordcloud = "^1.8.2.2"
+unidic-lite = "^1.0.8"
+mecab-python3 = "^1.0.6"
+requests = "^2.28.2"
+beautifulsoup4 = "^4.12.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
