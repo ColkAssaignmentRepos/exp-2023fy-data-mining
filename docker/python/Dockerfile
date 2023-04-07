@@ -23,6 +23,11 @@ WORKDIR /deploy/exp-2023fy-data-mining
 
 COPY ./pyproject.toml* poetry.lock* ./
 
+RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git \
+    && echo yes | mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -n \
+    && rm -rf mecab-ipadic-neologd
+
+
 RUN poetry config virtualenvs.create false \
     # mecab-python3 が `WheelFileValidationError` で落ちる
     # 回避のために modern-installation を無効化 \
